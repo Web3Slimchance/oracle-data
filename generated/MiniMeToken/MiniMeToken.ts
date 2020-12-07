@@ -62,28 +62,6 @@ export class Transfer__Params {
   }
 }
 
-export class NewCloneToken extends ethereum.Event {
-  get params(): NewCloneToken__Params {
-    return new NewCloneToken__Params(this);
-  }
-}
-
-export class NewCloneToken__Params {
-  _event: NewCloneToken;
-
-  constructor(event: NewCloneToken) {
-    this._event = event;
-  }
-
-  get _cloneToken(): Address {
-    return this._event.parameters[0].value.toAddress();
-  }
-
-  get _snapshotBlock(): BigInt {
-    return this._event.parameters[1].value.toBigInt();
-  }
-}
-
 export class Approval extends ethereum.Event {
   get params(): Approval__Params {
     return new Approval__Params(this);

@@ -14,20 +14,14 @@ dataSources:
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
-        - ClaimedTokens
         - Transfer
-        - NewCloneToken
         - Approval
       abis:
         - name: LinkToken
           file: ./abis/LinkToken.json
       eventHandlers:
-        - event: ClaimedTokens(indexed address,indexed address,uint256)
-          handler: handleClaimedTokens
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-        - event: NewCloneToken(indexed address,uint256)
-          handler: handleNewCloneToken
         - event: Approval(indexed address,indexed address,uint256)
           handler: handleApproval
       file: ./src/mapping.ts
