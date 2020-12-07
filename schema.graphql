@@ -1,5 +1,5 @@
 type Transfer @entity {
-  ID: ID!
+  id: ID!
   Count: BigInt!
   From: Bytes! # address
   To: Bytes! # address
@@ -7,7 +7,7 @@ type Transfer @entity {
 }
 
 type Approval @entity {
-  Id: ID!
+  id: ID!
   Count: BigInt!
   Owner: Bytes! # address
   Spender: Bytes! # address
