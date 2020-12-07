@@ -1,11 +1,10 @@
 import { BigInt } from "@graphprotocol/graph-ts"
 import {
   LinkToken,
-  ClaimedTokens,
   Transfer,
   Approval
 } from "../generated/LinkToken/LinkToken"
-import { _ClaimedTokens, _Transfer, _Approval } from "../generated/schema"
+import { Transfer, Approval } from "../generated/schema"
 
 export function handleTransfer(event: Transfer): void {
   let transfer = _Transfer.load(event.params._amount.toHex())
