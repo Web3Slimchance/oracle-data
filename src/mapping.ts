@@ -15,9 +15,9 @@ export function handleTransfer(event: Transfer): void {
   }
 
   transfer.count = transfer.count + BigInt.fromI32(1)
-  transfer._from = event.params._from
-  transfer._to = event.params._to
-  transfer._amount = event.params._amount
+  transfer.from = event.params._from
+  transfer.to = event.params._to
+  transfer.amount = event.params._amount
   transfer.save()
 }
 
@@ -31,8 +31,8 @@ export function handleApproval(event: Approval): void {
   }
 
   approval.count = approval.count + BigInt.fromI32(1)
-  approval._owner = event.params._owner
-  approval._spender = event.params._spender
-  approval._amount = event.params._amount
+  approval.owner = event.params._owner
+  approval.spender = event.params._spender
+  approval.amount = event.params._amount
   approval.save()
 }
