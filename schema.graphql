@@ -1,30 +1,15 @@
-type _ClaimedTokens @entity {
-  id: ID!
-  count: BigInt!
-  _token: Bytes! # address
-  _controller: Bytes! # address
-  _amount: BigInt!
+type Transfer @entity {
+  ID: ID!
+  Count: BigInt!
+  From: Bytes! # address
+  To: Bytes! # address
+  Amount: BigInt!
 }
 
-type _Transfer @entity {
-  id: ID!
-  count: BigInt!
-  _from: Bytes! # address
-  _to: Bytes! # address
-  _amount: BigInt!
-}
-
-type _NewCloneToken @entity {
-  id: ID!
-  count: BigInt!
-  _cloneToken: Bytes! # address
-  _snapshotBlock: BigInt!
-}
-
-type _Approval @entity {
-  id: ID!
-  count: BigInt!
-  _owner: Bytes! # address
-  _spender: Bytes! # address
-  _amount: BigInt!
+type Approval @entity {
+  Id: ID!
+  Count: BigInt!
+  Owner: Bytes! # address
+  Spender: Bytes! # address
+  Amount: BigInt!
 }
