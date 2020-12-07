@@ -3,11 +3,11 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: MiniMeToken
+    name: ChainLink Token
     network: mainnet
     source:
       address: "0x514910771af9ca656af840dff83e8264ecf986ca"
-      abi: MiniMeToken
+      abi: LinkToken
       startBlock: 11089774
     mapping:
       kind: ethereum/events
@@ -19,8 +19,8 @@ dataSources:
         - NewCloneToken
         - Approval
       abis:
-        - name: MiniMeToken
-          file: ./abis/MiniMeToken.json
+        - name: LinkToken
+          file: ./abis/LinkToken.json
       eventHandlers:
         - event: ClaimedTokens(indexed address,indexed address,uint256)
           handler: handleClaimedTokens

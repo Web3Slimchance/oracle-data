@@ -1,11 +1,11 @@
 import { BigInt } from "@graphprotocol/graph-ts"
 import {
-  MiniMeToken,
+  LinkToken,
   ClaimedTokens,
   Transfer,
   NewCloneToken,
   Approval
-} from "../generated/MiniMeToken/MiniMeToken"
+} from "../generated/LinkToken/LinkToken"
 import { _ClaimedTokens, _Transfer, _NewCloneToken, _Approval } from "../generated/schema"
 
 export function handleClaimedTokens(event: ClaimedTokens): void {
