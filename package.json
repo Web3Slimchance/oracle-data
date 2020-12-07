@@ -1,0 +1,16 @@
+{
+  "name": "oracle_tokens_aggregator",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ lapinvert/oracle_token_aggregator",
+    "create-local": "graph create --node http://localhost:8020/ lapinvert/oracle_tokens_aggregator",
+    "remove-local": "graph remove --node http://localhost:8020/ lapinvert/oracle_tokens_aggregator",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 lapinvert/oracle_tokens_aggregator"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.19.0",
+    "@graphprotocol/graph-ts": "0.19.0"
+  }
+}
