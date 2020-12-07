@@ -7,10 +7,10 @@ import {
 import { Transfer, Approval } from "../generated/schema"
 
 export function handleTransfer(event: Transfer): void {
-  let transfer = _Transfer.load(event.params._amount.toHex())
+  let transfer = Transfer.load(event.params._amount.toHex())
 
   if (transfer == null) {
-    transfer = new _Transfer(event.params._amount.toHex())
+    transfer = new Transfer(event.params._amount.toHex())
     transfer.count = BigInt.fromI32(0)
   }
 
@@ -23,10 +23,10 @@ export function handleTransfer(event: Transfer): void {
 
 
 export function handleApproval(event: Approval): void {
-  let approval = _Approval.load(event.params._amount.toHex())
+  let approval = Approval.load(event.params._amount.toHex())
 
   if (approval == null) {
-    approval = new _Approval(event.params._amount.toHex())
+    approval = new Approval(event.params._amount.toHex())
     approval.count = BigInt.fromI32(0)
   }
 
