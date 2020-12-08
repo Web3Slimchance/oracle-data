@@ -48,3 +48,26 @@ dataSources:
         - event: Approval(indexed address,indexed address,uint256)
           handler: handleDIAApproval
       file: ./src/dia-mapping.ts
+  - kind: ethereum/contract
+    name: BandToken
+    network: mainnet
+    source:
+      address: "0xBA11D00c5f74255f56a5E366F4F77f5A186d7f55"
+      abi: BandToken
+      startBlock: 11089774
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+        - Approval
+      abis:
+        - name: BandToken
+          file: ./abis/BandToken.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleBandTransfer
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleBandApproval
+      file: ./src/band-mapping.ts
