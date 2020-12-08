@@ -38,6 +38,6 @@ export function handleLinkApproval(event: Approval): void {
   approval.amount = event.params.value
   approval.contractName = "LinkToken"
   approval.timestamp = event.block.timestamp
-  approval.blockheight = event.block.timestamp
+  approval.blockheight = event.block.number
   approval.save()
 }
