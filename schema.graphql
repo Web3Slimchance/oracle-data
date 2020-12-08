@@ -3,10 +3,10 @@ type Transfer @entity {
   id: ID!
 
   "Timestamp of the transfer"
-  timestamp: BigInt! 
+  timestamp: BigInt!
 
-  "Blockheight at which the approval was included"
-  blockheight: BigInt!
+  "Block number at which the approval was included"
+  blockNumber: BigInt!
 
   "Address the token was sent from"
   from: Bytes!
@@ -20,7 +20,8 @@ type Transfer @entity {
   "Amount of tokens transferred"
   amount: BigInt!
 
-   count: BigInt!
+  "Number of confirmations"
+  count: BigInt!
 }
 
 type Approval @entity {
@@ -30,9 +31,8 @@ type Approval @entity {
   "Timestamp of the approval"
   timestamp: BigInt!
 
-  "Blockheight at which the approval was included"
-  blockheight: BigInt!
-
+  "Block number at which the approval was included"
+  blockNumber: BigInt!
 
   "Address of the token holder"
   owner: Bytes!
@@ -43,7 +43,9 @@ type Approval @entity {
   "Name of the oracle contract"
   contractName: String!
 
+  "Amount of tokens approved"
   amount: BigInt!
 
+  "Number of confirmations"
   count: BigInt!
 }

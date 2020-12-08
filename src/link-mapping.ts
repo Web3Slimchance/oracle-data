@@ -19,7 +19,7 @@ export function handleLinkTransfer(event: Transfer): void {
   transfer.amount = event.params.value
   transfer.contractName = "LinkToken"
   transfer.timestamp = event.block.timestamp
-  transfer.blockheight = event.block.number
+  transfer.blockNumber = event.block.number
   transfer.save()
 }
 
