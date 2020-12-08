@@ -19,7 +19,7 @@ export function handleBandTransfer(event: Transfer): void {
   transfer.amount = event.params.value
   transfer.contractName = "BandToken"
   transfer.timestamp = event.block.timestamp
-  transfer.blockheight = event.block.timestamp
+  transfer.blockheight = event.block.number
   transfer.save()
 }
 
@@ -38,7 +38,7 @@ export function handleBandApproval(event: Approval): void {
   approval.amount = event.params.value
   approval.contractName = "BandToken"
   approval.timestamp = event.block.timestamp
-  approval.blockheight = event.block.timestamps
+  approval.blockheight = event.block.number
   approval.save()
 
 }
