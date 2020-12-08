@@ -1,15 +1,35 @@
 type Transfer @entity {
   id: ID!
+  "The IPFS hash for off-chain data about the transfer"
+
+  #
+  #TODO: To do : add blockheight/timestamp
+  #timestamp: Int!
+  #"When the transfer was processed"
+  #
+
   count: BigInt!
-  from: Bytes! # address
-  to: Bytes! # address
+  from: Bytes!
+  "Address the token was sent from"
+  to: Bytes!
+  "Address the token was sent to"
   amount: BigInt!
 }
 
 type Approval @entity {
   id: ID!
+  "The IPFS hash for off-chain data about the Approval"
+
+  #
+  #TODO: To do : add blockheight/timestamp
+  #timestamp: Int!
+  #"When the approval was processed"
+  #
+
   count: BigInt!
-  owner: Bytes! # address
-  spender: Bytes! # address
+  owner: Bytes!
+  "Address of the token holder"
+  spender: Bytes!
+  "Contract that gets permission to spend tokens"
   amount: BigInt!
 }
