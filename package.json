@@ -2,6 +2,8 @@
   "name": "oracle-data",
   "version": "1.0.0",
   "license": "UNLICENSED",
+  "repository": "https://github.com/web3slimchance/oracle-data",
+  "authors": "web3slimchance & lupinvert",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",

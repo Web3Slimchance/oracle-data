@@ -13,11 +13,16 @@ export function handleLinkTransfer(event: Transfer): void {
     transfer.count = BigInt.fromI32(0)
   }
 
+  if (transfer.totalVolume == null) {
+    transfer.totalVolume  = BigInt.fromI32(0)
+  }
+  transfer.totalVolume = transfer.totalVolume + event.params.value
+
   transfer.count = transfer.count + BigInt.fromI32(1)
   transfer.from = event.params.from
   transfer.to = event.params.to
   transfer.amount = event.params.value
-  transfer.contractName = "LinkToken"
+  transfer.tokenName = "Chainlink"
   transfer.timestamp = event.block.timestamp
   transfer.blockNumber = event.block.number
   transfer.save()
@@ -36,8 +41,8 @@ export function handleLinkApproval(event: Approval): void {
   approval.owner = event.params.owner
   approval.spender = event.params.spender
   approval.amount = event.params.value
-  approval.contractName = "LinkToken"
+  approval.tokenName = "Chainlink"
   approval.timestamp = event.block.timestamp
-  approval.blockheight = event.block.number
+  approval.blockNumber = event.block.number
   approval.save()
 }

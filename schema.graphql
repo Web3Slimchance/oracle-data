@@ -1,11 +1,11 @@
 type Transfer @entity {
-  "The IPFS hash for off-chain data about the transfer"
+  "Transfer ID"
   id: ID!
 
   "Timestamp of the transfer"
   timestamp: BigInt!
 
-  "Block number at which the approval was included"
+  "Block number at which the transfer was included"
   blockNumber: BigInt!
 
   "Address the token was sent from"
@@ -14,18 +14,21 @@ type Transfer @entity {
   "Address the token was sent to"
   to: Bytes!
 
-  "Name of the oracle contract"
-  contractName: String!
+  "Name of the oracle token name"
+  tokenName: String!
 
   "Amount of tokens transferred"
   amount: BigInt!
 
   "Number of confirmations"
   count: BigInt!
+
+  "total transaction volume"
+  totalVolume: BigInt!
 }
 
 type Approval @entity {
-  "The IPFS hash for off-chain data about the Approval"
+  "Approval ID"
   id: ID!
 
   "Timestamp of the approval"
@@ -40,8 +43,8 @@ type Approval @entity {
   "Contract that gets permission to spend tokens"
   spender: Bytes!
 
-  "Name of the oracle contract"
-  contractName: String!
+  "Name of the oracle token name"
+  tokenName: String!
 
   "Amount of tokens approved"
   amount: BigInt!

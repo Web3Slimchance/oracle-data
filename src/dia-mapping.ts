@@ -13,11 +13,16 @@ export function handleDIATransfer(event: Transfer): void {
     transfer.count = BigInt.fromI32(0)
   }
 
+  if (transfer.totalVolume == null) {
+    transfer.totalVolume  = BigInt.fromI32(0)
+  }
+  transfer.totalVolume = transfer.totalVolume + event.params.value
+
   transfer.count = transfer.count + BigInt.fromI32(1)
   transfer.from = event.params.from
   transfer.to = event.params.to
   transfer.amount = event.params.value
-  transfer.contractName = "DIAToken"
+  transfer.tokenName = "DIA"
   transfer.timestamp = event.block.timestamp
   transfer.blockNumber = event.block.number
   transfer.save()
@@ -36,7 +41,7 @@ export function handleDIAApproval(event: Approval): void {
   approval.owner = event.params.owner
   approval.spender = event.params.spender
   approval.amount = event.params.value
-  approval.contractName = "DIAToken"
+  approval.tokenName = "DIA"
   approval.timestamp = event.block.timestamp
   approval.blockNumber = event.block.number
   approval.save()
