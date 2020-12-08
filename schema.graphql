@@ -2,13 +2,11 @@ type Transfer @entity {
   "The IPFS hash for off-chain data about the transfer"
   id: ID!
 
-  #
-  #TODO: To do : add blockheight/timestamp
-  #timestamp: Int!
-  #"When the transfer was processed"
-  #
+  "Timestamp of the transfer"
+  timestamp: BigInt! 
 
-  count: BigInt!
+  "Blockheight at which the approval was included"
+  blockheight: BigInt!
 
   "Address the token was sent from"
   from: Bytes!
@@ -19,20 +17,22 @@ type Transfer @entity {
   "Name of the oracle contract"
   contractName: String!
 
+  "Amount of tokens transferred"
   amount: BigInt!
+
+   count: BigInt!
 }
 
 type Approval @entity {
   "The IPFS hash for off-chain data about the Approval"
   id: ID!
 
-  #
-  #TODO: To do : add blockheight/timestamp
-  #timestamp: Int!
-  #"When the approval was processed"
-  #
+  "Timestamp of the approval"
+  timestamp: BigInt!
 
-  count: BigInt!
+  "Blockheight at which the approval was included"
+  blockheight: BigInt!
+
 
   "Address of the token holder"
   owner: Bytes!
@@ -44,4 +44,6 @@ type Approval @entity {
   contractName: String!
 
   amount: BigInt!
+
+  count: BigInt!
 }

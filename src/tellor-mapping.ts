@@ -18,11 +18,8 @@ export function handleTellorTransfer(event: Transfer): void {
   transfer.to = event.params.to
   transfer.amount = event.params.value
   transfer.contractName = "TellorMaster"
-  /**
-   * To do : add blockheight/timestamp
-   * transfer.timestamp = #####
-   *
-   */
+  transfer.timestamp = event.block.timestamp
+  transfer.blockheight = event.block.timestamp
   transfer.save()
 }
 
@@ -40,10 +37,7 @@ export function handleTellorApproval(event: Approval): void {
   approval.spender = event.params.spender
   approval.amount = event.params.value
   approval.contractName = "TellorMaster"
-  /**
-   * To do : add blockheight/timestamp
-   * approval.timestamp = #####
-   *
-   */
+  approval.timestamp = event.block.timestamp
+  approval.blockheight = event.block.timestamp
   approval.save()
 }
