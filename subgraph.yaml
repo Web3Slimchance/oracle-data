@@ -93,4 +93,4 @@ dataSources:
           handler: handleTellorTransfer
         - event: Approval(indexed address,indexed address,uint256)
           handler: handleTellorApproval
-      file: ./src/band-mapping.ts
+      file: ./src/tellor-mapping.ts
