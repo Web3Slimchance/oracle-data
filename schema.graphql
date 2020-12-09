@@ -14,7 +14,7 @@ type Transfer @entity {
   "Address the token was sent to"
   to: Bytes!
 
-  "Name of the oracle token name"
+  "Name of the oracle token"
   tokenName: String!
 
   "Amount of tokens transferred"
@@ -40,7 +40,7 @@ type Approval @entity {
   "Contract that gets permission to spend tokens"
   spender: Bytes!
 
-  "Name of the oracle token name"
+  "Name of the oracle token"
   tokenName: String!
 
   "Amount of tokens approved"
