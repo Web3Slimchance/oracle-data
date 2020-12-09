@@ -12,12 +12,12 @@ export function handleTellorTransfer(event: Transfer): void {
     transfer = new schema.Transfer(event.params.value.toHex())
     transfer.count = BigInt.fromI32(0)
   }
-
+/**
   if (transfer.totalVolume == null) {
     transfer.totalVolume  = BigInt.fromI32(0)
   }
   transfer.totalVolume = transfer.totalVolume + event.params.value
-
+ */
   transfer.count = transfer.count + BigInt.fromI32(1)
   transfer.from = event.params.from
   transfer.to = event.params.to

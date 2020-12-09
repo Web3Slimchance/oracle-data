@@ -20,11 +20,8 @@ type Transfer @entity {
   "Amount of tokens transferred"
   amount: BigInt!
 
-  "Number of confirmations"
   count: BigInt!
 
-  "total transaction volume"
-  totalVolume: BigInt!
 }
 
 type Approval @entity {
@@ -49,6 +46,5 @@ type Approval @entity {
   "Amount of tokens approved"
   amount: BigInt!
 
-  "Number of confirmations"
   count: BigInt!
 }
