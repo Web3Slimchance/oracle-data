@@ -53,6 +53,7 @@ export class Approval__Params {
   }
 }
 
+
 export function handleTransfer(tokenName: string, event: TransferEvent): void {
   let transfer = schema.Transfer.load(event.params.value.toHex())
 
@@ -75,6 +76,7 @@ export function handleTransfer(tokenName: string, event: TransferEvent): void {
     tokenVolume.totalVolume = BigInt.fromI32(0).toBigDecimal()
   }
 
+  tokenVolume.tokenName = tokenName
   tokenVolume.totalVolume = tokenVolume.totalVolume + transfer.amount
   transfer.totalVolume = tokenVolume.totalVolume
   transfer.save()

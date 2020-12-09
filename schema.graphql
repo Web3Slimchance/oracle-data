@@ -28,11 +28,14 @@ type Transfer @entity {
 }
 
 type TokenVolume @entity {
+  "Token internal ID"
+  id: ID!
+
   "Total transaction volume"
   totalVolume: BigDecimal!
 
   "Name of the oracle token"
-  id: ID!
+  tokenName: String!
 }
 
 type Approval @entity {
