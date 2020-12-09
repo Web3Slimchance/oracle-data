@@ -70,17 +70,17 @@ export function handleTransfer(tokenName: string, event: TransferEvent): void {
   transfer.timestamp = event.block.timestamp
   transfer.blockNumber = event.block.number
 
-  let tokenVolume = schema.TokenVolume.load(tokenName)
-  if (tokenVolume == null) {
-    tokenVolume = new schema.TokenVolume(tokenName)
-    tokenVolume.totalVolume = BigInt.fromI32(0).toBigDecimal()
+  let analytic = schema.Analytic.load(tokenName)
+  if (analytic == null) {
+    analytic = new schema.Analytic(tokenName)
+    analytic.totalVolume = BigInt.fromI32(0).toBigDecimal()
   }
 
-  tokenVolume.tokenName = tokenName
-  tokenVolume.totalVolume = tokenVolume.totalVolume + transfer.amount
-  transfer.totalVolume = tokenVolume.totalVolume
+  analytic.tokenName = tokenName
+  analytic.totalVolume = analytic.totalVolume + transfer.amount
+  transfer.totalVolume = analytic.totalVolume
   transfer.save()
-  tokenVolume.save()
+  analytic.save()
 }
 
 export function handleApproval(tokenName: string, event: ApprovalEvent): void {

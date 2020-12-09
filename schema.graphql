@@ -27,7 +27,7 @@ type Transfer @entity {
 
 }
 
-type TokenVolume @entity {
+type Analytic @entity {
   "Token internal ID"
   id: ID!
 
