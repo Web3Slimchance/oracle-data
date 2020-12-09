@@ -8,7 +8,7 @@ dataSources:
     source:
       address: "0x514910771af9ca656af840dff83e8264ecf986ca"
       abi: LinkToken
-      startBlock: 11089774
+      startBlock: 4281611
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -31,7 +31,7 @@ dataSources:
     source:
       address: "0x84cA8bc7997272c7CfB4D0Cd3D55cd942B3c9419"
       abi: DIAToken
-      startBlock: 11089774
+      startBlock: 9010514
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -54,7 +54,7 @@ dataSources:
     source:
       address: "0xBA11D00c5f74255f56a5E366F4F77f5A186d7f55"
       abi: BandToken
-      startBlock: 11089774
+      startBlock: 8514296
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -77,7 +77,7 @@ dataSources:
     source:
       address: "0x0Ba45A8b5d5575935B8158a88C631E9F9C95a2e5"
       abi: TellorMaster
-      startBlock: 11089774
+      startBlock: 8265522
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
