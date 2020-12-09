@@ -20,7 +20,7 @@ dataSources:
         - name: LinkToken
           file: ./abis/LinkToken.json
       eventHandlers:
-        - event: Transfer(indexed address,indexed address,uint256,bytes)
+        - event: Transfer(indexed address,indexed address,uint256)
           handler: handleLinkTransfer
         - event: Approval(indexed address,indexed address,uint256)
           handler: handleLinkApproval

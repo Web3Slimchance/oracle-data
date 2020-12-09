@@ -17,11 +17,22 @@ type Transfer @entity {
   "Name of the oracle token"
   tokenName: String!
 
+ "Total transaction volume at time of transfer"
+  totalVolume: BigDecimal!
+
   "Amount of tokens transferred"
-  amount: BigInt!
+  amount: BigDecimal!
 
   count: BigInt!
 
+}
+
+type TokenVolume @entity {
+  "Total transaction volume"
+  totalVolume: BigDecimal!
+
+  "Name of the oracle token"
+  id: ID!
 }
 
 type Approval @entity {
@@ -44,7 +55,7 @@ type Approval @entity {
   tokenName: String!
 
   "Amount of tokens approved"
-  amount: BigInt!
+  amount: BigDecimal!
 
   count: BigInt!
 }
