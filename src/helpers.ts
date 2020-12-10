@@ -77,10 +77,12 @@ export function handleTransfer(tokenName: string, event: TransferEvent): void {
   }
 
   analytic.tokenName = tokenName
-  analytic.totalVolume = analytic.totalVolume + transfer.amount
-  transfer.totalVolume = analytic.totalVolume
+  if (transfer.count <= BigInt.fromI32(1)) {
+    analytic.totalVolume = analytic.totalVolume + transfer.amount
+    transfer.totalVolume = analytic.totalVolume
+    analytic.save()
+  }
   transfer.save()
-  analytic.save()
 }
 
 export function handleApproval(tokenName: string, event: ApprovalEvent): void {
